@@ -1,5 +1,4 @@
-# Design Document: Nayaymadad Legal OS
-
+# Design Document: Nayaymadad
 ## Overview
 
 Nayaymadad is a voice-first, multilingual legal assistance platform designed for Indian citizens. The system architecture follows a client-server model with a React Native mobile application communicating with a Python FastAPI backend that orchestrates multiple AI services from Sarvam AI (India's sovereign AI platform).
@@ -1754,4 +1753,5 @@ test('Property 35: Language UI update completeness', () => {
 - Never use real user data in tests
 - Anonymize any production data used for debugging
 - Regularly rotate test credentials and API keys
+
 
