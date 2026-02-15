@@ -4,6 +4,10 @@
 
 NyayMadad is a voice-first, multilingual legal assistance platform designed for Indian citizens. The system architecture follows a client-server model with a React Native mobile application communicating with a Python FastAPI backend that orchestrates multiple AI services from Sarvam AI (India's sovereign AI platform).
 
+### Design Prototype Mock
+
+For visual reference and user experience design, please refer to the interactive design prototype mock that demonstrates the complete user journey, UI components, and interaction patterns across all features of the NyayMadad application.
+
 ### Architecture Philosophy
 
 1. **Voice-First Design**: All interactions prioritize voice input/output over text, with Sarvam AI's Saaras V3 (STT) and Bulbul V3 (TTS) as primary interfaces
@@ -53,42 +57,62 @@ NyayMadad is a voice-first, multilingual legal assistance platform designed for 
 ```mermaid
 graph TB
     subgraph "Mobile App (React Native + Expo)"
-        UI[UI Layer<br/>React Native Paper]
-        State[State Management<br/>Zustand Stores]
-        Cache[Local Cache<br/>MMKV]
-        Audio[Audio Services<br/>expo-av]
-        Camera[Camera/Gallery<br/>expo-camera/image-picker]
+        UI["UI Layer
+React Native Paper"]
+        State["State Management
+Zustand Stores"]
+        Cache["Local Cache
+MMKV"]
+        Audio["Audio Services
+expo-av"]
+        Camera["Camera/Gallery
+expo-camera/image-picker"]
     end
 
     subgraph "Backend API (FastAPI)"
-        API[API Routes<br/>/api/v1/*]
-        Auth[Auth Service<br/>Firebase Admin]
+        API["API Routes
+/api/v1/*"]
+        Auth["Auth Service
+Firebase Admin"]
         Services[Business Logic Layer]
-        AI[AI Orchestration<br/>LangChain/LangGraph]
+        AI["AI Orchestration
+LangChain/LangGraph"]
     end
 
     subgraph "AI Services (Sarvam AI)"
-        STT[Saaras V3<br/>Speech-to-Text]
-        TTS[Bulbul V3<br/>Text-to-Speech]
-        LLM[Sarvam-M<br/>LLM (Primary)]
-        Translate[Sarvam-Translate<br/>Mayura]
+        STT["Saaras V3
+Speech-to-Text"]
+        TTS["Bulbul V3
+Text-to-Speech"]
+        LLM["Sarvam-M
+LLM Primary"]
+        Translate["Sarvam-Translate
+Mayura"]
     end
 
     subgraph "AWS Services"
-        Bedrock[Amazon Bedrock<br/>Claude 3 Haiku (Fallback)]
-        S3[Amazon S3<br/>Document Storage]
+        Bedrock["Amazon Bedrock
+Claude 3 Haiku Fallback"]
+        S3["Amazon S3
+Document Storage"]
     end
 
     subgraph "Data Layer"
-        Postgres[(PostgreSQL<br/>User/Conversation Data)]
-        Qdrant[(Qdrant<br/>Legal Corpus Vectors)]
-        Redis[(Redis<br/>Cache/Queue)]
+        Postgres[("PostgreSQL
+User/Conversation Data")]
+        Qdrant[("Qdrant
+Legal Corpus Vectors")]
+        Redis[("Redis
+Cache/Queue")]
     end
 
     subgraph "External Services"
-        OCR[Google Cloud Vision<br/>OCR]
-        FirebaseAuth[Firebase Auth<br/>Phone OTP]
-        Maps[Google Maps API<br/>Legal Aid Locations]
+        OCR["Google Cloud Vision
+OCR"]
+        FirebaseAuth["Firebase Auth
+Phone OTP"]
+        Maps["Google Maps API
+Legal Aid Locations"]
     end
 
     UI --> State
@@ -115,6 +139,35 @@ graph TB
     
     Auth --> FirebaseAuth
     UI --> Maps
+
+    %% Styling
+    classDef mobileStyle fill:#4CAF50,stroke:#2E7D32,stroke-width:2px,color:#fff
+    classDef backendStyle fill:#2196F3,stroke:#1565C0,stroke-width:2px,color:#fff
+    classDef aiStyle fill:#FF9800,stroke:#E65100,stroke-width:2px,color:#fff
+    classDef awsStyle fill:#FF5722,stroke:#BF360C,stroke-width:2px,color:#fff
+    classDef dataStyle fill:#9C27B0,stroke:#4A148C,stroke-width:2px,color:#fff
+    classDef externalStyle fill:#607D8B,stroke:#263238,stroke-width:2px,color:#fff
+
+    class UI,State,Cache,Audio,Camera mobileStyle
+    class API,Auth,Services,AI backendStyle
+    class STT,TTS,LLM,Translate aiStyle
+    class Bedrock,S3 awsStyle
+    class Postgres,Qdrant,Redis dataStyle
+    class OCR,FirebaseAuth,Maps externalStyle
+
+    %% Click events for interactive documentation
+    click UI "#frontend-components" "View Frontend Components"
+    click State "#frontend-components" "View State Management"
+    click Cache "#frontend-components" "View Caching Strategy"
+    click API "#1-api-layer-appapiv1" "View API Endpoints"
+    click Services "#2-service-layer-appservices" "View Service Layer"
+    click AI "#3-ai-layer-appai" "View AI Orchestration"
+    click STT "#3-ai-layer-appai" "View Speech-to-Text"
+    click TTS "#3-ai-layer-appai" "View Text-to-Speech"
+    click LLM "#3-ai-layer-appai" "View LLM Integration"
+    click Postgres "#postgresql-schema" "View Database Schema"
+    click Qdrant "#qdrant-vector-store-schema" "View Vector Store"
+    click Redis "#2-service-layer-appservices" "View Caching Layer"
 ```
 
 ### Component Interaction Flow
