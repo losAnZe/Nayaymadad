@@ -4,9 +4,11 @@
 
 NyayMadad is a voice-first, multilingual legal assistance platform designed for Indian citizens. The system architecture follows a client-server model with a React Native mobile application communicating with a Python FastAPI backend that orchestrates multiple AI services from Sarvam AI (India's sovereign AI platform).
 
-### Design Prototype Mock
+### Design Prototype
 
-For visual reference and user experience design, please refer to the interactive design prototype mock that demonstrates the complete user journey, UI components, and interaction patterns across all features of the NyayMadad application.
+Explore the interactive design prototype: [NyayMadad Design Mock](https://nayaymadad.netlify.app/)
+
+This prototype demonstrates the user interface, user flows, and key interactions across all features of the application.
 
 ### Architecture Philosophy
 
@@ -141,33 +143,36 @@ Legal Aid Locations"]
     UI --> Maps
 
     %% Styling
-    classDef mobileStyle fill:#4CAF50,stroke:#2E7D32,stroke-width:2px,color:#fff
-    classDef backendStyle fill:#2196F3,stroke:#1565C0,stroke-width:2px,color:#fff
-    classDef aiStyle fill:#FF9800,stroke:#E65100,stroke-width:2px,color:#fff
-    classDef awsStyle fill:#FF5722,stroke:#BF360C,stroke-width:2px,color:#fff
-    classDef dataStyle fill:#9C27B0,stroke:#4A148C,stroke-width:2px,color:#fff
-    classDef externalStyle fill:#607D8B,stroke:#263238,stroke-width:2px,color:#fff
+    classDef mobileClass fill:#4CAF50,stroke:#2E7D32,stroke-width:2px,color:#fff
+    classDef backendClass fill:#2196F3,stroke:#1565C0,stroke-width:2px,color:#fff
+    classDef aiClass fill:#FF9800,stroke:#E65100,stroke-width:2px,color:#fff
+    classDef awsClass fill:#FF5722,stroke:#BF360C,stroke-width:2px,color:#fff
+    classDef dataClass fill:#9C27B0,stroke:#4A148C,stroke-width:2px,color:#fff
+    classDef externalClass fill:#607D8B,stroke:#263238,stroke-width:2px,color:#fff
 
-    class UI,State,Cache,Audio,Camera mobileStyle
-    class API,Auth,Services,AI backendStyle
-    class STT,TTS,LLM,Translate aiStyle
-    class Bedrock,S3 awsStyle
-    class Postgres,Qdrant,Redis dataStyle
-    class OCR,FirebaseAuth,Maps externalStyle
+    class UI,State,Cache,Audio,Camera mobileClass
+    class API,Auth,Services,AI backendClass
+    class STT,TTS,LLM,Translate aiClass
+    class Bedrock,S3 awsClass
+    class Postgres,Qdrant,Redis dataClass
+    class OCR,FirebaseAuth,Maps externalClass
 
-    %% Click events for interactive documentation
-    click UI "#frontend-components" "View Frontend Components"
-    click State "#frontend-components" "View State Management"
-    click Cache "#frontend-components" "View Caching Strategy"
-    click API "#1-api-layer-appapiv1" "View API Endpoints"
-    click Services "#2-service-layer-appservices" "View Service Layer"
-    click AI "#3-ai-layer-appai" "View AI Orchestration"
-    click STT "#3-ai-layer-appai" "View Speech-to-Text"
-    click TTS "#3-ai-layer-appai" "View Text-to-Speech"
-    click LLM "#3-ai-layer-appai" "View LLM Integration"
-    click Postgres "#postgresql-schema" "View Database Schema"
-    click Qdrant "#qdrant-vector-store-schema" "View Vector Store"
-    click Redis "#2-service-layer-appservices" "View Caching Layer"
+    %% Clickable links
+    click UI "https://reactnative.dev" "React Native Documentation"
+    click State "https://zustand-demo.pmnd.rs" "Zustand Documentation"
+    click API "https://fastapi.tiangolo.com" "FastAPI Documentation"
+    click STT "https://www.sarvam.ai" "Sarvam AI Platform"
+    click TTS "https://www.sarvam.ai" "Sarvam AI Platform"
+    click LLM "https://www.sarvam.ai" "Sarvam AI Platform"
+    click Translate "https://www.sarvam.ai" "Sarvam AI Platform"
+    click Bedrock "https://aws.amazon.com/bedrock" "Amazon Bedrock"
+    click S3 "https://aws.amazon.com/s3" "Amazon S3"
+    click Postgres "https://www.postgresql.org" "PostgreSQL"
+    click Qdrant "https://qdrant.tech" "Qdrant Vector Database"
+    click Redis "https://redis.io" "Redis"
+    click OCR "https://cloud.google.com/vision" "Google Cloud Vision"
+    click FirebaseAuth "https://firebase.google.com/docs/auth" "Firebase Auth"
+    click Maps "https://developers.google.com/maps" "Google Maps API"
 ```
 
 ### Component Interaction Flow
