@@ -1,4 +1,4 @@
-# Design Document: Nyaymadad Legal OS
+# Design Document: Nyaymadad
 
 ## Overview
 
@@ -1754,5 +1754,6 @@ test('Property 35: Language UI update completeness', () => {
 - Never use real user data in tests
 - Anonymize any production data used for debugging
 - Regularly rotate test credentials and API keys
+
 
 
