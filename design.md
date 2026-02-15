@@ -1,12 +1,12 @@
-# Design Document: NyayMadad Legal OS
+# Design Document: Nayaymadad Legal OS
 
 ## Overview
 
-NyayMadad is a voice-first, multilingual legal assistance platform designed for Indian citizens. The system architecture follows a client-server model with a React Native mobile application communicating with a Python FastAPI backend that orchestrates multiple AI services from Sarvam AI (India's sovereign AI platform).
+Nayaymadad is a voice-first, multilingual legal assistance platform designed for Indian citizens. The system architecture follows a client-server model with a React Native mobile application communicating with a Python FastAPI backend that orchestrates multiple AI services from Sarvam AI (India's sovereign AI platform).
 
 ### Design Prototype
 
-Explore the interactive design prototype: [NyayMadad Design Mock](https://nayaymadad.netlify.app/)
+Explore the interactive design prototype: [Nayaymadad Design Mock](https://nayaymadad.netlify.app/)
 
 This prototype demonstrates the user interface, user flows, and key interactions across all features of the application.
 
@@ -179,7 +179,7 @@ Legal Aid Locations"]
 
 **Voice Query Flow**:
 
-1. User taps microphone → NyayMadad_App records audio via expo-av
+1. User taps microphone → Nayaymadad_App records audio via expo-av
 2. Audio sent to Backend_API `/api/v1/chat/voice` endpoint
 3. Backend_API forwards audio to Sarvam Saaras V3 STT
 4. Transcribed text returned to app and displayed
@@ -669,7 +669,7 @@ class RAGPipeline:
 
 ```python
 LEGAL_ASSISTANT_SYSTEM_PROMPT = """
-You are NyayMadad, a helpful legal assistant for Indian citizens. Your role is to:
+You are Nayaymadad, a helpful legal assistant for Indian citizens. Your role is to:
 
 1. Explain Indian laws, rights, and legal procedures in simple, clear language
 2. Avoid legal jargon - use everyday words and examples
@@ -1011,7 +1011,7 @@ A property is a characteristic or behavior that should hold true across all vali
 
 ### Property 6: Message Display After Transcription
 
-*For any* transcription result received from the backend, the NyayMadad_App SHALL display the transcribed text in a message bubble in the chat interface.
+*For any* transcription result received from the backend, the Nayaymadad_App SHALL display the transcribed text in a message bubble in the chat interface.
 
 **Validates: Requirements 2.4**
 
@@ -1029,7 +1029,7 @@ A property is a characteristic or behavior that should hold true across all vali
 
 ### Property 9: Response Display and Audio Playback
 
-*For any* response received from the backend containing text and audio URL, the NyayMadad_App SHALL both display the text and initiate audio playback.
+*For any* response received from the backend containing text and audio URL, the Nayaymadad_App SHALL both display the text and initiate audio playback.
 
 **Validates: Requirements 2.7**
 
@@ -1065,13 +1065,13 @@ A property is a characteristic or behavior that should hold true across all vali
 
 ### Property 15: Citation UI Interactivity
 
-*For any* message containing citations, the NyayMadad_App SHALL render each citation as a tappable chip that expands to show full legal text when tapped.
+*For any* message containing citations, the Nayaymadad_App SHALL render each citation as a tappable chip that expands to show full legal text when tapped.
 
 **Validates: Requirements 3.7**
 
 ### Property 16: Image Upload Completion
 
-*For any* image selected or captured by the user, the NyayMadad_App SHALL successfully upload it to the Backend_API (or return an error if upload fails).
+*For any* image selected or captured by the user, the Nayaymadad_App SHALL successfully upload it to the Backend_API (or return an error if upload fails).
 
 **Validates: Requirements 4.2**
 
@@ -1101,7 +1101,7 @@ A property is a characteristic or behavior that should hold true across all vali
 
 ### Property 21: Analysis Result Caching
 
-*For any* document analysis result received by the NyayMadad_App, the result SHALL be stored in local MMKV cache and be retrievable offline.
+*For any* document analysis result received by the Nayaymadad_App, the result SHALL be stored in local MMKV cache and be retrievable offline.
 
 **Validates: Requirements 4.10, 11.2**
 
@@ -1167,7 +1167,7 @@ A property is a characteristic or behavior that should hold true across all vali
 
 ### Property 32: Scheme Display Field Completeness
 
-*For any* scheme displayed in the NyayMadad_App, the UI SHALL show name, description, eligibility_criteria, and application_process fields.
+*For any* scheme displayed in the Nayaymadad_App, the UI SHALL show name, description, eligibility_criteria, and application_process fields.
 
 **Validates: Requirements 8.4**
 
@@ -1179,7 +1179,7 @@ A property is a characteristic or behavior that should hold true across all vali
 
 ### Property 34: Map Marker Display
 
-*For any* list of legal aid centers returned, the NyayMadad_App SHALL display a map marker for each center at its specified coordinates.
+*For any* list of legal aid centers returned, the Nayaymadad_App SHALL display a map marker for each center at its specified coordinates.
 
 **Validates: Requirements 9.4**
 
@@ -1203,7 +1203,7 @@ A property is a characteristic or behavior that should hold true across all vali
 
 ### Property 38: Bilingual Citation Display
 
-*For any* citation displayed, the NyayMadad_App SHALL show the law name in both English and the user's preferred language (if translation is available).
+*For any* citation displayed, the Nayaymadad_App SHALL show the law name in both English and the user's preferred language (if translation is available).
 
 **Validates: Requirements 10.4**
 
@@ -1215,7 +1215,7 @@ A property is a characteristic or behavior that should hold true across all vali
 
 ### Property 40: Offline Badge Display
 
-*For any* cached conversation or analysis viewed while offline, the NyayMadad_App SHALL display an "Offline" badge on the item.
+*For any* cached conversation or analysis viewed while offline, the Nayaymadad_App SHALL display an "Offline" badge on the item.
 
 **Validates: Requirements 11.3**
 
@@ -1227,13 +1227,13 @@ A property is a characteristic or behavior that should hold true across all vali
 
 ### Property 42: Cache Size Threshold
 
-*For any* state where cached data size exceeds 100MB, the NyayMadad_App SHALL display a prompt to the user to clear old conversations.
+*For any* state where cached data size exceeds 100MB, the Nayaymadad_App SHALL display a prompt to the user to clear old conversations.
 
 **Validates: Requirements 11.6**
 
 ### Property 43: Image Compression Size Limit
 
-*For any* image uploaded by the NyayMadad_App, the compressed image size SHALL be less than or equal to 1MB.
+*For any* image uploaded by the Nayaymadad_App, the compressed image size SHALL be less than or equal to 1MB.
 
 **Validates: Requirements 12.2**
 
@@ -1245,19 +1245,19 @@ A property is a characteristic or behavior that should hold true across all vali
 
 ### Property 45: Minimum Font Size
 
-*For any* text element displayed in the NyayMadad_App, the font size SHALL be at least 16sp.
+*For any* text element displayed in the Nayaymadad_App, the font size SHALL be at least 16sp.
 
 **Validates: Requirements 12.6**
 
 ### Property 46: Color Contrast Ratio
 
-*For any* foreground-background color combination used in the NyayMadad_App, the contrast ratio SHALL be at least 4.5:1 (WCAG AA standard).
+*For any* foreground-background color combination used in the Nayaymadad_App, the contrast ratio SHALL be at least 4.5:1 (WCAG AA standard).
 
 **Validates: Requirements 12.7**
 
 ### Property 47: HTTPS Enforcement
 
-*For any* API request from NyayMadad_App to Backend_API, the connection SHALL use HTTPS with TLS 1.3 or higher.
+*For any* API request from Nayaymadad_App to Backend_API, the connection SHALL use HTTPS with TLS 1.3 or higher.
 
 **Validates: Requirements 13.2**
 
@@ -1299,7 +1299,7 @@ A property is a characteristic or behavior that should hold true across all vali
 
 ### Property 54: Topic-Specific Disclaimer Injection
 
-*For any* query about criminal law or court representation (detected by keywords), the Backend_API response SHALL include a disclaimer that NyayMadad does not replace lawyers.
+*For any* query about criminal law or court representation (detected by keywords), the Backend_API response SHALL include a disclaimer that Nayaymadad does not replace lawyers.
 
 **Validates: Requirements 14.3**
 
@@ -1329,7 +1329,7 @@ A property is a characteristic or behavior that should hold true across all vali
 
 ### Property 59: Analytics Event Transmission
 
-*For any* significant user action (onboarding completion, voice query, document analysis), the NyayMadad_App SHALL send an analytics event to the Backend_API.
+*For any* significant user action (onboarding completion, voice query, document analysis), the Nayaymadad_App SHALL send an analytics event to the Backend_API.
 
 **Validates: Requirements 15.1, 15.2, 15.3**
 
@@ -1463,7 +1463,7 @@ All API errors follow consistent JSON structure:
 
 ### Dual Testing Approach
 
-NyayMadad employs both unit testing and property-based testing to ensure comprehensive coverage:
+Nayaymadad employs both unit testing and property-based testing to ensure comprehensive coverage:
 
 - **Unit tests**: Verify specific examples, edge cases, error conditions, and integration points
 - **Property tests**: Verify universal properties across all inputs through randomization
@@ -1754,3 +1754,4 @@ test('Property 35: Language UI update completeness', () => {
 - Never use real user data in tests
 - Anonymize any production data used for debugging
 - Regularly rotate test credentials and API keys
+
